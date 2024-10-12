@@ -1,0 +1,35 @@
+{
+    "name": "test-group/test-000",
+    "description": "This is a simple test to demonstrate the auto-loading functionality of PHP Composer.",
+    "version": "0.0.0",
+    "authors": [
+        {
+            "name":"ARB Jayo",
+            "email":"jayo.adonisraphael@gmail.com",
+            "role": "Project Architect | Core Developer"
+        }
+    ],
+    "type": "project",
+    "extra": {
+        "group": "test-group"
+    },
+    
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "composer",
+        "autoload",
+        "project"
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "test_group\\test_000\\": [
+                "src/main/php/test_group/test_000/"
+            ]
+        }
+    },
+    "require": {
+        "php": ">=8.2"
+    }
+}

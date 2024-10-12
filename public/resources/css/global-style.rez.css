@@ -1,0 +1,30 @@
+
+:root {
+
+}
+
+body {
+
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5rem;
+}
+
+h2 {
+    color: navy;
+}
+
+
+.go-back-home {
+    text-decoration: underline;
+}
