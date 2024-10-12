@@ -13,4 +13,4 @@
     href="<?=Asset::resolvePublicRezUrl("css/global-style.rez.css")?>"
 />
 
-<title><?= isset($PAGE_TITLE) ? $PAGE_TITLE : 'Test 000 <default>'; ?></title>
+<title><?=$PAGE_TITLE?? 'Test 000 <default>'?></title>

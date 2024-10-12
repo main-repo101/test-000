@@ -2,6 +2,17 @@
 
 use test_group\test_000\util\Asset;
 
+// $PAGE_TITLE = isset($PAGE_TITLE) 
+//     && !empty(trim($PAGE_TITLE = strval($PAGE_TITLE))) 
+//     ? "$PAGE_TITLE - 404" : null;
+
+// if( isset($PAGE_TITLE) ) {
+//     if( is_numeric($PAGE_TITLE) )
+//         $PAGE_TITLE = strval($PAGE);
+//     if( !empty(trim($PAGE_TITLE)) )
+//         $PAGE_TITLE .= " - 404 ";
+// }
+
 ?>
 
 
@@ -14,7 +25,6 @@ use test_group\test_000\util\Asset;
     <link rel="stylesheet" type="text/css"
     href="<?=Asset::resolvePublicRezUrl("css/404-style.rez.css")?>"
     />
-    <!-- <title><?= isset($PAGE_TITLE) ? $PAGE_TITLE . " - 404" : 'Test 000 <404>'; ?></title> //REM: [TODO] .|. Not working...--> 
 </head>
 
 <body>

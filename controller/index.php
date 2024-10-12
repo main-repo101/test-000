@@ -2,6 +2,17 @@
 
 use test_group\test_000\util\Asset;
 
+// $PAGE_TITLE = isset($PAGE_TITLE) 
+//     && !empty(trim($PAGE_TITLE = strval($PAGE_TITLE))) 
+//     ? "$PAGE_TITLE - Home" : null;
+
+// if( isset($PAGE_TITLE) ) {
+//     if( is_numeric($PAGE_TITLE) )
+//         $PAGE_TITLE = strval($PAGE);
+//     if( !empty(trim($PAGE_TITLE)) )
+//         $PAGE_TITLE .= " - Home ";
+// }
+
 ?>
 
 
@@ -9,13 +20,11 @@ use test_group\test_000\util\Asset;
 
 <head>
     <?php
-    // \test_group\test_000\util\Debug::var_dump_and_exit($_SERVER);
     require_once Asset::resolvePublicRezUrl("metadata/global-metadata.rez.php");
     ?>
     <link rel="stylesheet" type="text/css"
     href="<?=Asset::resolvePublicRezUrl("css/dashboard-style.rez.css")?>"
     />
-    <!-- <title><?= isset($PAGE_TITLE) ? $PAGE_TITLE . " - Dashboard" : 'Test 000 <Dashboard>'; ?></title> //REM: [TODO] .|. Not working...--> 
 </head>
 
 <body>

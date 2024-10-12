@@ -23,4 +23,5 @@ class Server {
     public static function getRequestedQuery(): string | null {
         return parse_url(Server::getRequestedURI())["query"];
     }
+
 }

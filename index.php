@@ -3,6 +3,7 @@
 require_once __DIR__ . "/src/main/php/test_group/test_000/autoload-config.php";
 
 use test_group\test_000\util\Server;
+use test_group\test_000\util\Response;
 
 
 $ROUTES = [
@@ -31,8 +32,8 @@ function route_to_controller(array $routes): void
         $PAGE_TITLE = "Test 000" . " - " . $REQUEST_ROUTES["title"]; //REM: [TODO] .|. What??? No way...
         require_once $REQUEST_ROUTES["url"];
     } else {
-        $PAGE_TITLE = "Test 000" . " - 404"; //REM: [TODO] .|. What??? No way...
-        http_response_code(404);
+        $PAGE_TITLE = "Test 000" . " - " . Response::NOT_FOUND->value; //REM: [TODO] .|. What??? No way...
+        http_response_code(Response::NOT_FOUND->value);
         require_once "controller/404.php";
         exit();
     }
