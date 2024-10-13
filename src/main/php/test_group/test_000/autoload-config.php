@@ -3,7 +3,7 @@
 
 namespace test_group\test_000;
 
-define( "__BASE_DIR", \realpath("."));
+define( "__BASE_DIR", \realpath(".") ?: \realpath( __DIR__ . "../../../../../../" ) );
 define( "__RESOURCES", \realpath(__BASE_DIR . "/src/main/resources"));
 define( "__PUBLIC_RESOURCES", \realpath(__BASE_DIR . "/public/resources"));
 
