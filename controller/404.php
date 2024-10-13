@@ -23,7 +23,7 @@ use test_group\test_000\util\Asset;
     require_once Asset::resolvePublicRezUrl("metadata/global-metadata.rez.php");
     ?>
     <link rel="stylesheet" type="text/css"
-    href="<?=Asset::resolvePublicRezUrl("css/404-style.rez.css")?>"
+    href="/<?=Asset::resolvePublicRezUrl("css/404-style.rez.css")?>"
     />
 </head>
 
