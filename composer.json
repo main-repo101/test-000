@@ -4,8 +4,8 @@
     "version": "0.0.0",
     "authors": [
         {
-            "name":"ARB Jayo",
-            "email":"jayo.adonisraphael@gmail.com",
+            "name": "ARB Jayo",
+            "email": "jayo.adonisraphael@gmail.com",
             "role": "Project Architect | Core Developer"
         }
     ],
@@ -13,7 +13,6 @@
     "extra": {
         "group": "test-group"
     },
-    
     "license": "MIT",
     "keywords": [
         "php",
@@ -21,7 +20,6 @@
         "autoload",
         "project"
     ],
-
     "autoload": {
         "psr-4": {
             "test_group\\test_000\\": [
@@ -31,5 +29,14 @@
     },
     "require": {
         "php": ">=8.2"
+    },
+    "scripts": {
+        "start": [
+            "sh -c 'if [ -x ./lib/tailwindcss/tailwindcss-linux-x64 ]; then ./lib/tailwindcss/tailwindcss-linux-x64 -i ./src/main/resources/css/main-style.rez.css -o ./public/resources/css/main-style.rez.css --watch; else echo \"~Tailwind CSS not found for linux\"; fi'",
+            
+            "start cmd /c \"if exist .\\lib\\tailwindcss\\tailwindcss-windows-x64.exe (.\\lib\\tailwindcss\\tailwindcss-windows-x64.exe -i .\\src\\main\\resources\\css\\main-style.rez.css -o .\\public\\resources\\css\\main-style.rez.css --watch) else (echo ~Tailwind CSS not found for windows)\"",
+
+            "php -S localhost:8008"
+        ]
     }
 }

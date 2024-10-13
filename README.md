@@ -2,6 +2,8 @@
 
 > This is a simple test to demonstrate the auto-loading functionality of PHP Composer..
 
+> Note: Branch dev-twc, partial/not-stable TWC configs.
+
 ## Table of Contents
 
 1. [Overview](#overview)

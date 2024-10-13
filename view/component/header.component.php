@@ -26,7 +26,7 @@ use test_group\test_000\util\Server;
     </div>
     <div id="header-floor">
         <h2>Header floor...</h2>
-        <img src="<?=Asset::resolvePublicRezUrl("img/img-icon-leaf-check-360x360-000.png")?>"
+        <img src="/<?=Asset::resolvePublicRezUrl("img/img-icon-leaf-check-360x360-000.png")?>"
         />
     </div>
 </header>
