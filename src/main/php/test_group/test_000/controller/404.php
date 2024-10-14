@@ -28,8 +28,16 @@ use test_group\test_000\util\Asset;
 </head>
 
 <body>
+    <?php
+    require_once Asset::resolveViewUrl("component/header.component.php");
+    ?>
+    
     <?php 
     require_once Asset::resolveViewUrl("404.view.php"); 
+    ?>
+    
+    <?php
+    require_once Asset::resolveViewUrl("component/footer.component.php");
     ?>
 </body>
 

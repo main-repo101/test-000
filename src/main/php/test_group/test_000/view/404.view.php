@@ -1,6 +1,4 @@
-<?php
-require_once __DIR__ . "/component/header.component.php";
-?>
+
 
 <main>
 
@@ -10,6 +8,3 @@ require_once __DIR__ . "/component/header.component.php";
 
 </main>
 
-<?php
-require_once __DIR__ . "/component/footer.component.php";
-?>

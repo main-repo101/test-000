@@ -28,7 +28,15 @@ use test_group\test_000\util\Asset;
 
 <body>
     <?php
+    require_once Asset::resolveViewUrl("component/header.component.php");
+    ?>
+
+    <?php
     require_once Asset::resolveViewUrl("sign-in.view.php");
+    ?>
+
+    <?php
+    require_once Asset::resolveViewUrl("component/footer.component.php");
     ?>
 </body>
 
