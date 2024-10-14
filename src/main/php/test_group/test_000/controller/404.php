@@ -4,13 +4,13 @@ use test_group\test_000\util\Asset;
 
 // $PAGE_TITLE = isset($PAGE_TITLE) 
 //     && !empty(trim($PAGE_TITLE = strval($PAGE_TITLE))) 
-//     ? "$PAGE_TITLE - Sign-Up" : null;
+//     ? "$PAGE_TITLE - 404" : null;
 
 // if( isset($PAGE_TITLE) ) {
 //     if( is_numeric($PAGE_TITLE) )
 //         $PAGE_TITLE = strval($PAGE);
 //     if( !empty(trim($PAGE_TITLE)) )
-//         $PAGE_TITLE .= " - Sign-Up ";
+//         $PAGE_TITLE .= " - 404 ";
 // }
 
 ?>
@@ -23,13 +23,13 @@ use test_group\test_000\util\Asset;
     require_once Asset::resolvePublicRezUrl("metadata/global-metadata.rez.php");
     ?>
     <link rel="stylesheet" type="text/css"
-    href="/<?=Asset::resolvePublicRezUrl("css/sign-up-style.rez.css")?>"
+    href="/<?=Asset::resolvePublicRezUrl("css/404-style.rez.css")?>"
     />
 </head>
 
 <body>
-    <?php
-    require_once "view/sign-up.view.php";
+    <?php 
+    require_once Asset::resolveViewUrl("404.view.php"); 
     ?>
 </body>
 

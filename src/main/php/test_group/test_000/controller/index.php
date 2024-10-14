@@ -4,16 +4,17 @@ use test_group\test_000\util\Asset;
 
 // $PAGE_TITLE = isset($PAGE_TITLE) 
 //     && !empty(trim($PAGE_TITLE = strval($PAGE_TITLE))) 
-//     ? "$PAGE_TITLE - Sign-In" : null;
+//     ? "$PAGE_TITLE - Home" : null;
 
 // if( isset($PAGE_TITLE) ) {
 //     if( is_numeric($PAGE_TITLE) )
 //         $PAGE_TITLE = strval($PAGE);
 //     if( !empty(trim($PAGE_TITLE)) )
-//         $PAGE_TITLE .= " - Sign-In ";
+//         $PAGE_TITLE .= " - Home ";
 // }
 
 ?>
+
 
 <html>
 
@@ -22,13 +23,13 @@ use test_group\test_000\util\Asset;
     require_once Asset::resolvePublicRezUrl("metadata/global-metadata.rez.php");
     ?>
     <link rel="stylesheet" type="text/css"
-    href="/<?=Asset::resolvePublicRezUrl("css/sign-in-style.rez.css")?>"
+    href="/<?=Asset::resolvePublicRezUrl("css/dashboard-style.rez.css")?>"
     />
 </head>
 
 <body>
-    <?php
-    require_once "view/sign-in.view.php";
+    <?php 
+    require_once Asset::resolveViewUrl("dashboard.view.php"); 
     ?>
 </body>
 

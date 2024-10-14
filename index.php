@@ -4,19 +4,21 @@ require_once __DIR__ . "/src/main/php/test_group/test_000/autoload-config.php";
 
 use test_group\test_000\util\Server;
 use test_group\test_000\util\Response;
+use test_group\test_000\util\Debug;
+use test_group\test_000\util\Asset;
 
 
 $ROUTES = [
     "/" => [
-        "url" => "controller/index.php",
+        "url" => Asset::resolveControllerUrl("index.php"),
         "title" => "Home"
     ],
     "/sign-in" => [
-        "url" => "controller/sign-in.php",
+        "url" => Asset::resolveControllerUrl("sign-in.php"),
         "title" => "Sign-In"
     ],
     "/sign-up" => [
-        "url" => "controller/sign-up.php",
+        "url" => Asset::resolveControllerUrl("sign-up.php"),
         "title" => "Sign-Up"
     ]
 ];
@@ -34,7 +36,7 @@ function route_to_controller(array $routes): void
     } else {
         $PAGE_TITLE = "Test 000" . " - " . Response::NOT_FOUND->value; //REM: [TODO] .|. What??? No way...
         http_response_code(Response::NOT_FOUND->value);
-        require_once "controller/404.php";
+        require_once Asset::resolveControllerUrl("404.php");
         exit();
     }
 }
