@@ -28,3 +28,7 @@ h2 {
 .go-back-home {
     text-decoration: underline;
 }
+
+.msg.inactive-account {
+    color: red;
+}

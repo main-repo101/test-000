@@ -2,6 +2,11 @@
 
 use test_group\test_000\util\Asset;
 
+// if( isset($_SESSION["user_name"]) ) {
+//     header("location: /");
+//     exit();
+// }
+
 // $PAGE_TITLE = isset($PAGE_TITLE) 
 //     && !empty(trim($PAGE_TITLE = strval($PAGE_TITLE))) 
 //     ? "$PAGE_TITLE - Sign-Up" : null;
