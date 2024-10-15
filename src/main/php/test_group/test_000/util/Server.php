@@ -40,6 +40,11 @@ class Server
         $_SESSION[self::SESSION_KEY_LAST_ACTIVITY] = time();
     }
 
+    public static function endSession(): void {
+        session_unset();
+        session_destroy();
+    }
+
     /**
      * Check if the session has expired due to inactivity
      * 
@@ -59,8 +64,7 @@ class Server
      */
     protected static function resetSessionForTimeout(): void
     {
-        session_unset();     //REM: Unset all session variables
-        session_destroy();   //REM: Destroy the session
+        self::endSession();
         session_start();     //REM: Start a new session
         session_regenerate_id(true); //REM: Regenerate the session ID for security
         $_SESSION[self::SESSION_KEY_TIMEOUT] = 1; //REM: Set timeout flag
