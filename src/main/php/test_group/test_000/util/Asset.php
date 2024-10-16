@@ -9,7 +9,9 @@ class Asset {
         $url = str_replace(
             __BASE_DIR,
             "",
-            __PUBLIC_RESOURCES . '/' . ltrim($resourcePath, " /\\")
+            __PUBLIC_RESOURCES . '/' . self::sanitizePath(
+                ltrim($resourcePath, " /\\")
+            )
         );
         return ltrim($url, " /\\");
     }
@@ -18,7 +20,9 @@ class Asset {
         $url = str_replace(
             __BASE_DIR,
             "",
-            __RESOURCES . '/' . ltrim($resourcePath, " /\\")
+            __RESOURCES . '/' . self::sanitizePath(
+                ltrim($resourcePath, " /\\")
+            )
         );
         return ltrim($url, " /\\");
     }
@@ -47,6 +51,31 @@ class Asset {
     
         return $viewPath;
     }
+
+    public static function sanitizePath(
+        string $path
+    ): string {
+        
+        $path = str_replace('\\', '/', $path); //REM: Convert backslashes to forward slashes
+
+        //REM: Remove any directory traversal sequences
+        $path = preg_replace('/\.\.(\/|\\\\)/', '', $path); //REM: Remove ../ or ..\
+    
+        //REM: Remove any double/multiple slashes
+        $path = preg_replace('/\/{2,}/', '/', $path);
+        
+        //REM: [TODO] .|. Add switch/match/cases for guarding restricted path/dir.
+
+        // $resolvePath = realPath($path);
+
+        // $resolvePath = str_replace(
+        //     __BASE_DIR,
+        //     "",
+        //     $resolvePath
+        // );
+
+        return $path;
+    }
     
     private static function pathCutter(
         string &$inOuttarget, 
@@ -62,7 +91,9 @@ class Asset {
         $inOuttarget = str_replace(
             $subtraction,
             "",
-            $extraPrefix . "/" . ltrim($inOuttarget, " /\\")
+            $extraPrefix . "/" . self::sanitizePath(
+                ltrim($inOuttarget, " /\\")
+            )
         );
         $inOuttarget = ltrim($inOuttarget, " /\\");
     
