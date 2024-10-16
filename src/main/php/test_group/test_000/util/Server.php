@@ -10,6 +10,7 @@ class Server
     public const SESSION_KEY_USERNAME = "user_name";
     public const SESSION_KEY_LAST_ACTIVITY = "session_time_last_activity";
     public const SESSION_KEY_TIMEOUT = "timeout";
+    public const SESSION_KEY_STATUS = "status";
 
     /**
      * Start the session and manage timeout

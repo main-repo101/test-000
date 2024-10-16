@@ -1,6 +1,11 @@
 <?php
 
 use test_group\test_000\util\Asset;
+use test_group\test_000\util\Response;
+use test_group\test_000\util\Server;
+
+//REM: [TODO] .|. Temp global var
+// $_SESSION[Server::SESSION_KEY_STATUS] = Response::NOT_FOUND;
 
 // $PAGE_TITLE = isset($PAGE_TITLE) 
 //     && !empty(trim($PAGE_TITLE = strval($PAGE_TITLE))) 
@@ -38,6 +43,12 @@ use test_group\test_000\util\Asset;
     
     <?php
     require_once Asset::resolveViewUrl("component/footer.component.php");
+    ?>
+    
+
+    <?php
+    //REM: [TODO] .|. Cleaning up related resources...
+    unset($_SESSION[Server::SESSION_KEY_STATUS]);
     ?>
 </body>
 
