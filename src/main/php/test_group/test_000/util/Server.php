@@ -39,6 +39,7 @@ class Server
 
         //REM: Update the session with the current activity time
         $_SESSION[self::SESSION_KEY_LAST_ACTIVITY] = time();
+        // $_SESSION[self::SESSION_KEY_TIMEOUT] = 0;
     }
 
     public static function endSession(): void {
