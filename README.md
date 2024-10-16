@@ -23,7 +23,7 @@ Follow these steps to install and set up the project:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/main-repo101/test-000.git
+    git clone --single-branch --branch main https://github.com/main-repo101/test-000.git
     cd test-000
     ```
 
