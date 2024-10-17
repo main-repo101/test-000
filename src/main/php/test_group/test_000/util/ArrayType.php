@@ -21,6 +21,9 @@ enum ArrayType : int {
     }
 
     public static function isAssociativeArray( mixed $array ): bool {
+        
+        if( !is_array($array) ) return false;
+
         return !self::isIndexArray($array);
     }
 
@@ -35,7 +38,7 @@ enum ArrayType : int {
                 return false;
         }
 
-        //REM: Same order of indices
+        //REM: It must have the standard order of indices or indexes. (ASCENDING ORDER)
         return array_keys($array) === range(0, count($array) - 1);
     }
 
