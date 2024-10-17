@@ -173,4 +173,28 @@ class ServerTest extends TestCase {
         );
         
     }
+
+    public function testSessionTimeout(): void {
+        $this->assertFalse(
+            isset($_SESSION[Server::SESSION_KEY_TIMEOUT])
+        );
+        $this->assertFalse(
+            Server::isSessionTimeout()
+        );
+        
+        // sleep(3);
+
+        // Server::startSession( 1 );
+
+        // $this->assertTrue(
+        //     isset($_SESSION[Server::SESSION_KEY_TIMEOUT])
+        // );
+        // $this->assertTrue(
+        //     Server::isSessionTimeout()
+        // );
+        // $this->assertTrue(
+        //     1,
+        //     Server::getSessionTimeout()
+        // );
+    }
 }

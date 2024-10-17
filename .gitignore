@@ -10,6 +10,7 @@
 
 .env.local
 .env.dev*
+.misc
 
 gradle.properties
 local.properties
